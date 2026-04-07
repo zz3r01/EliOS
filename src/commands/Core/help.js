@@ -180,7 +180,6 @@ async function createInitialHelpMenu() {
     const buttonRow = new ActionRowBuilder().addComponents([
         bugReportButton,
         supportButton,
-        touchpointButton,
     ]);
 
     return {
