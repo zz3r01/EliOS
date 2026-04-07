@@ -47,9 +47,9 @@ async function createCategorySelectMenu() {
 
     const options = [
         {
-            label: "📋 All Commands",
-            description: "View all available commands with pagination",
-            value: ALL_COMMANDS_ID,
+           label: "📋 Все команды",
+description: "Просмотреть все доступные команды с пагинацией",
+value: ALL_COMMANDS_ID,
         },
         ...categoryDirs.map((category) => {
             const categoryName =
@@ -64,62 +64,62 @@ async function createCategorySelectMenu() {
         }),
     ];
 
-    const embed = createEmbed({
-        title: "🤖 TitanBot Help Center",
-        description: "Your all-in-one Discord companion for moderation, economy, fun, and server management.\n\nSelect a category below to explore our powerful commands:",
-        color: 'primary'
-    });
+const embed = createEmbed({
+    title: "🤖 Центр помощи EliOS",
+    description: "Ваш универсальный помощник в Discord для модерации, экономики, развлечений и управления сервером.\n\nВыберите категорию ниже, чтобы ознакомиться с нашими мощными командами:",
+    color: 'primary'
+});
 
-    embed.addFields(
-        {
-            name: "🛡️ **Moderation**",
-            value: "Server moderation, user management, and enforcement tools",
-            inline: true
-        },
-        {
-            name: "💰 **Economy**",
-            value: "Currency system, shops, and virtual economy",
-            inline: true
-        },
-        {
-            name: "🎮 **Fun**",
-            value: "Games, entertainment, and interactive commands",
-            inline: true
-        },
-        {
-            name: "📊 **Leveling**",
-            value: "User levels, XP system, and progression tracking",
-            inline: true
-        },
-        {
-            name: "🎫 **Tickets**",
-            value: "Support ticket system for server management",
-            inline: true
-        },
-        {
-            name: "🎉 **Giveaways**",
-            value: "Automated giveaway management and distribution",
-            inline: true
-        },
-        {
-            name: "👋 **Welcome**",
-            value: "Member welcome messages and onboarding",
-            inline: true
-        },
-        {
-            name: "🎂 **Birthdays**",
-            value: "Birthday tracking and celebration features",
-            inline: true
-        },
-        {
-            name: "🔧 **Utilities**",
-            value: "Useful tools and server utilities",
-            inline: true
-        }
-    );
-
+embed.addFields(
+    {
+        name: "🛡️ **Модерация**",
+        value: "Инструменты для модерации сервера, управления пользователями и контроля",
+        inline: true
+    },
+    {
+        name: "💰 **Экономика**",
+        value: "Система валюты, магазины и виртуальная экономика",
+        inline: true
+    },
+    {
+        name: "🎮 **Развлечения**",
+        value: "Игры, развлечения и интерактивные команды",
+        inline: true
+    },
+    {
+        name: "📊 **Уровни**",
+        value: "Уровни пользователей, система опыта (XP) и отслеживание прогресса",
+        inline: true
+    },
+    {
+        name: "🎫 **Тикеты**",
+        value: "Система тикетов для поддержки и управления сервером",
+        inline: true
+    },
+    {
+        name: "🎉 **Розыгрыши**",
+        value: "Автоматическое управление розыгрышами и выдача призов",
+        inline: true
+    },
+    {
+        name: "👋 **Приветствие**",
+        value: "Сообщения приветствия и онбординг новых участников",
+        inline: true
+    },
+    {
+        name: "🎂 **Дни рождения**",
+        value: "Отслеживание дней рождения и поздравления",
+        inline: true
+    },
+    {
+        name: "🔧 **Утилиты**",
+        value: "Полезные инструменты и функции для сервера",
+        inline: true
+    }
+);
+    
     embed.setFooter({
-        text: "Made with ❤️"
+        text: "Поддерживается Производственной Службой"
     });
     embed.setTimestamp();
 
@@ -189,21 +189,21 @@ export const helpBugReportButton = {
     name: BUG_REPORT_BUTTON_ID,
     async execute(interaction, client) {
         const githubButton = new ButtonBuilder()
-            .setLabel('🐛 Report Bug on GitHub')
+            .setLabel('🐛 Сообщи нам о проблеме')
             .setStyle(ButtonStyle.Link)
-            .setURL('https://github.com/codebymitch/TitanBot/issues');
+            .setURL('https://discord.com/channels/1472565480249229474');
 
         const bugRow = new ActionRowBuilder().addComponents(githubButton);
 
         const bugReportEmbed = createEmbed({
-            title: '🐛 Bug Report',
-            description: 'Found a bug? Please report it on our GitHub Issues page!\n\n' +
-                '**When reporting a bug, please include:**\n' +
-                '• 📝 Detailed description of the issue\n' +
-                '• 📋 Steps to reproduce the problem\n' +
-                '• 📸 Screenshots if applicable\n' +
-                '• 💻 Your bot version and environment\n\n' +
-                'This helps us fix issues faster and more effectively!',
+    title: '🐛 Отчёт об ошибке',
+    description: 'Нашли баг? Пожалуйста, сообщите о нём на нашей странице GitHub Issues!\n\n' +
+        '**При сообщении об ошибке, пожалуйста, укажите:**\n' +
+        '• 📝 Подробное описание проблемы\n' +
+        '• 📋 Шаги для воспроизведения\n' +
+        '• 📸 Скриншоты (если есть)\n' +
+        '• 💻 Версию бота и вашу среду\n\n' +
+        'Это поможет нам быстрее и эффективнее исправить проблему!'
             color: 'error'
         });
         bugReportEmbed.setFooter({
