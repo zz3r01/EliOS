@@ -22,22 +22,22 @@ const BUG_REPORT_BUTTON_ID = "help-bug-report";
 const HELP_MENU_TIMEOUT_MS = 5 * 60 * 1000;
 
 const CATEGORY_ICONS = {
-    Core: "ℹ️",
-    Moderation: "🛡️",
-    Economy: "💰",
-    Fun: "🎮",
-    Leveling: "📊",
-    Utility: "🔧",
-    Ticket: "🎫",
-    Welcome: "👋",
-    Giveaway: "🎉",
-    Counter: "🔢",
-    Tools: "🛠️",
-    Search: "🔍",
-    Reaction_Roles: "🎭",
-    Community: "👥",
-    Birthday: "🎂",
-    Config: "⚙️",
+    Основное: "ℹ️",
+    Модерация: "🛡️",
+    Экономика: "💰",
+    Игры: "🎮",
+    Уровни: "📊",
+    Инструменты: "🔧",
+    Тикеты: "🎫",
+    Приветсвие: "👋",
+    Раздачи: "🎉",
+    Счетчик: "🔢",
+    Предметы: "🛠️",
+    Поиск: "🔍",
+    Роли_за_Реакции: "🎭",
+    Комьюнити: "👥",
+    Дни_Рождения: "🎂",
+    Настройки: "⚙️",
 };
 
 
@@ -55,8 +55,8 @@ async function createInitialHelpMenu() {
 
     const options = [
         {
-            label: "📋 All Commands",
-            description: "View all available commands with pagination",
+            label: "📋 Все команды",
+            description: "Просмотреть все доступные команды с постраничной навигацией",
             value: ALL_COMMANDS_ID,
         },
         ...categoryDirs.map((category) => {
@@ -73,112 +73,107 @@ async function createInitialHelpMenu() {
     ];
 
     const embed = createEmbed({ 
-        title: "🤖 TitanBot Help Center",
-        description: "Your all-in-one Discord companion for moderation, economy, fun, and server management.",
+        title: "🤖 Операционная Система ЭлиОС",
+        description: "Ваш универсальный помощник, и искуственный мозг",
         color: 'primary'
     });
 
     embed.addFields(
         {
-            name: "🛡️ **Moderation**",
-            value: "Server moderation, user management, and enforcement tools",
+            name: "🛡️ **Модерация**",
+            value: "Модерация сервера, управление пользователями и инструменты обеспечения правил",
             inline: true
         },
         {
-            name: "💰 **Economy**",
-            value: "Currency system, shops, and virtual economy",
+            name: "💰 **Экономика**",
+            value: "Валютная система, магазины и виртуальная экономика",
             inline: true
         },
         {
-            name: "🎮 **Fun**",
-            value: "Games, entertainment, and interactive commands",
+            name: "🎮 **Игры**",
+            value: "Игры, развлечение и интерактивные команды",
             inline: true
         },
         {
-            name: "📊 **Leveling**",
-            value: "User levels, XP system, and progression tracking",
+            name: "📊 **Уровни**",
+            value: "Уровни пользователей, система опыта и отслеживание прогресса",
             inline: true
         },
         {
-            name: "🎫 **Tickets**",
-            value: "Support ticket system for server management",
+            name: "🎫 **Тикеты**",
+            value: "Система поддержки заявок для управления сервером",
             inline: true
         },
         {
-            name: "🎉 **Giveaways**",
-            value: "Automated giveaway management and distribution",
+            name: "🎉 **Раздачи**",
+            value: "Автоматизированное управление раздачами и их распределением",
             inline: true
         },
         {
-            name: "👋 **Welcome**",
-            value: "Member welcome messages and onboarding",
+            name: "👋 **Приветсвие**",
+            value: "Приветственные сообщения для участников и процесс адаптации",
             inline: true
         },
         {
-            name: "🎂 **Birthdays**",
-            value: "Birthday tracking and celebration features",
+            name: "🎂 **Дни Рождения**",
+            value: "Функции отслеживания и празднования дней рождения",
             inline: true
         },
         {
-            name: "👥 **Community**",
-            value: "Community tools, applications, and member engagement",
+            name: "👥 **Комьюнити**",
+            value: "Инструменты сообщества, приложения и взаимодействие участников",
             inline: true
         },
         {
-            name: "⚙️ **Config**",
-            value: "Server and bot configuration management commands",
+            name: "⚙️ **Настройки**",
+            value: "Команды управления конфигурацией сервера и бота",
             inline: true
         },
         {
-            name: "🔢 **Counter**",
-            value: "Live counter channel setup and counter controls",
+            name: "🔢 **Счетчик**",
+            value: "Настройка канала живого счётчика и элементы управления счётчиком",
             inline: true
         },
         {
-            name: "🎙️ **Join to Create**",
-            value: "Dynamic voice channel creation and management",
+            name: "🎙️ **Приватные комнаты**",
+            value: "Динамическое создание и управление голосовыми каналами",
             inline: true
         },
         {
-            name: "🎭 **Reaction Roles**",
-            value: "Self-assignable roles using reaction-role systems",
+            name: "🎭 **Роли за реакцию**",
+            value: "Самостоятельно назначаемые роли с использованием систем реакций на роли",
             inline: true
         },
         {
-            name: "✅ **Verification**",
-            value: "Member verification workflows and access gating",
+            name: "✅ **Верификация**",
+            value: "Процессы проверки участников и ограничения доступа",
             inline: true
         },
         {
-            name: "🔧 **Utilities**",
-            value: "Useful tools and server utilities",
+            name: "🔧 **Инструменты**",
+            value: "Полезные инструменты и серверные утилиты",
             inline: true
         }
     );
 
     embed.setFooter({ 
-        text: "Made with ❤️" 
+        text: "Произведено Производственной Службой" 
     });
     embed.setTimestamp();
 
     const bugReportButton = new ButtonBuilder()
         .setCustomId(BUG_REPORT_BUTTON_ID)
-        .setLabel("Report Bug")
+        .setLabel("Сообщить о проблеме")
         .setStyle(ButtonStyle.Danger);
 
     const supportButton = new ButtonBuilder()
-        .setLabel("Support Server")
-        .setURL("https://discord.gg/QnWNz2dKCE")
-        .setStyle(ButtonStyle.Link);
-
-    const touchpointButton = new ButtonBuilder()
-        .setLabel("Learn from Touchpoint")
-        .setURL("https://www.youtube.com/@TouchDisc")
+        .setLabel("Сервер Поддержки")
+        .setURL("https://discord.gg/A9Jd6CpBQH")
         .setStyle(ButtonStyle.Link);
 
     const selectRow = createSelectMenu(
         CATEGORY_SELECT_ID,
-        "Select to view the commands",
+        "Выберите, чтобы просмотреть команды",
         options,
     );
 
@@ -197,7 +192,7 @@ async function createInitialHelpMenu() {
 export default {
     data: new SlashCommandBuilder()
         .setName("help")
-        .setDescription("Displays the help menu with all available commands"),
+        .setDescription("Отображает меню помощи со всеми доступными командами"),
 
     async execute(interaction, guildConfig, client) {
         
@@ -214,8 +209,8 @@ export default {
         setTimeout(async () => {
             try {
                 const closedEmbed = createEmbed({
-                    title: "Help menu closed",
-                    description: "Help menu has been closed, use /help again.",
+                    title: "Меню помощи закрыто",
+                    description: "Меню помощи было закрыто, используйте /help снова.",
                     color: "secondary",
                 });
 
